@@ -1,0 +1,519 @@
+/* -------------- GLOBAL-STYLE --------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --main-color: #3a6ff8;
+  --primary-color: #1b2028;
+  --secondary-color: #f2f2f2;
+  --dark-color-background: #31353f;
+  --gray-color-900: #9e9e9e;
+  --gray-color-800: #31353f;
+  --red-color-900: #f46d22;
+  --green-color-900: #1ecb4f;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--dark-color-background);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+body .body-container .side-bar {
+  background-color: var(--primary-color);
+}
+body .body-container .side-bar {
+  width: 300px;
+}
+body.body-container .graph-sections {
+  width: 80%;
+}
+body .body-container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.side-padding {
+  padding: 32px 40px;
+}
+.side-padding-sm {
+  padding: 22px 30px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.active-link {
+  background-color: var(--main-color);
+  color: var(--secondary-color) !important;
+}
+.currency-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--dark-color-background);
+}
+.currency-placeholder {
+  color: var(--gray-color-900);
+  margin-top: 3px;
+}
+.currency-head {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.increment-amount {
+  margin-top: 20px;
+  color: var(--green-color-900);
+}
+.decrement-amount {
+  margin-top: 20px;
+  color: var(--red-color-900);
+}
+.rounded {
+  padding: 30px;
+  border-radius: 15px;
+}
+@media screen and (min-width: 2300px) {
+  body {
+    height: 100vh;
+  }
+}
+
+/* -------------- GLOBAL-STYLE --------------------------- */
+
+/* -------------- EFFECT-STYLE  --------------------------- */
+/* ------- side-bar-start ------------  */
+#navigation-links .links-list .list-link,
+#navigation-links .links-list .list-link a img,
+#navigation-links .links-list .list-link a,
+.graphs-section .currency-view .table .header button,
+.side-bar #auth-section button {
+  transition: ease 0.4s;
+}
+#navigation-links .links-list .list-link:not(.active-link):hover,
+.side-bar #auth-section button:hover {
+  background-color: var(--secondary-color);
+}
+#navigation-links .links-list .list-link:not(.active-link):hover a,
+.side-bar #auth-section button:hover {
+  color: var(--dark-color);
+}
+#navigation-links .links-list .list-link:not(.active-link):hover a img,
+.side-bar #auth-section button:hover img {
+  transform: scale(1.2);
+}
+.graphs-section .currency-view .table .header button:hover {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+/* ------- side-bar-end ------------  */
+
+/* -------------- EFFECT-STYLE  --------------------------- */
+
+/* -------------- ELEMENTS-STYLE  --------------------------- */
+/* ------- side-bar-start ------------  */
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.side-bar #navigation-links {
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.side-bar #navigation-links .links-list {
+  list-style: none;
+  gap: 10px;
+  width: 100%;
+}
+.side-bar #navigation-links .links-list .list-link {
+  border-radius: 10px;
+  width: 100%;
+}
+.side-bar #navigation-links .links-list .list-link a {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 15px;
+  font-weight: 500;
+}
+.side-bar #navigation-links .links-list .list-link:not(.active-link) a {
+  color: var(--gray-color-900);
+}
+.side-bar #auth-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.side-bar #auth-section button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  flex: 1;
+  gap: 15px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 15px 10px;
+  color: var(--gray-color-900);
+}
+
+/* ------- side-bar-end ------------  */
+
+/* ------- #graph-sections header-start ------------  */
+#graph-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#graph-sections header {
+  width: 100%;
+}
+#graph-sections header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100vw - 400px);
+}
+#graph-sections header nav h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  flex: 1;
+}
+#graph-sections header nav .search-bar,
+#graph-sections header nav .user-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+#graph-sections header nav .search-bar {
+  background-color: var(--primary-color);
+  padding: 7px 30px;
+  padding-inline-end: 20px;
+  border-radius: 10px;
+}
+#graph-sections header nav .search-bar input {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  outline: none;
+}
+#graph-sections header nav .user-section {
+  gap: 30px;
+}
+#graph-sections header nav .after {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+}
+#graph-sections header nav .after img {
+  width: 100%;
+  height: 100%;
+}
+#graph-sections header nav .user-section .notification {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#graph-sections header nav .user-section select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-color);
+  padding: 0 10px;
+}
+#graph-sections header nav .user-section select option {
+  color: var(--primary-color);
+}
+/* ------- #graph-sections header-end ------------  */
+
+/* ------- crypto-cards-start ------------  */
+#graph-sections #crypto-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+#graph-sections #crypto-cards .card {
+  background-color: var(--primary-color);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 23px 19px;
+  border-radius: 15px;
+}
+#graph-sections #crypto-cards .card .slice-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#graph-sections #crypto-cards .card .slice-one .currency-content {
+  display: flex;
+  gap: 30px;
+}
+#graph-sections #crypto-cards .card .slide-two {
+  display: flex;
+  justify-content: space-between;
+}
+#graph-sections #crypto-cards .card .slide-two .active-price {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+/* ------- crypto-cards-end ------------  */
+
+/* ------- graph-sections-cards-end ------------  */
+
+#graph-sections .graphs-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#graph-sections .graphs-section .graphs-section-container {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+#graph-sections .graphs-section h2 {
+  color: var(--secondary-color);
+}
+#graph-sections .graphs-section .currency-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  height: 76%;
+}
+#graph-sections .graphs-section .currency-portfolio .portfolio {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+#graph-sections .graphs-section .currency-portfolio .portfolio-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#graph-sections .graphs-section .currency-portfolio .portfolio-card-details,
+#graph-sections .graphs-section .portfolio-card .portfolio-card-currency {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* ------- graph-sections-cards-end ------------  */
+
+/* ------- currency-graph-sections-cards-start ------------  */
+
+#graph-sections .graphs-section .currency-view {
+  flex: 1;
+}
+#graph-sections .graphs-section .currency-graph {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  flex: 1;
+  width: 100%;
+}
+
+#graph-sections .graphs-section .currency-graph .currency-graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.currency-graph .currency-graph-header h3 {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+}
+.currency-graph .currency-graph-header .controller {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.currency-graph .currency-graph-header .controller .candle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--gray-color-800);
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.currency-graph .currency-graph-header .controller .currency-options {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gray-color-800);
+  width: 100px;
+  gap: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.currency-graph .currency-graph-header .controller .currency-options select {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 2px 5px;
+  color: var(--gray-color-900);
+}
+.currency-graph-header .controller .currency-options select option {
+  color: var(--primary-color);
+}
+.graphs-section .currency-graph .currency-graph-controllers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.graphs-section .currency-graph .currency-graph-controllers .time {
+  display: flex;
+  gap: 30px;
+}
+.graphs-section .currency-graph .currency-graph-controllers .time div {
+  border: 1px solid var(--gray-color-800);
+  width: 50px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-color-900);
+  font-size: 0.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.currency-graph .currency-graph-controllers .controllers-selections {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.currency-graph .currency-graph-controllers .controllers-selections select {
+  background-color: transparent;
+  color: var(--gray-color-900);
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+}
+.currency-graph .currency-graph-controllers .controllers-selections div {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+}
+.currency-graph {
+  height: 600px;
+}
+.currency-graph .currency-graph-data {
+  display: flex;
+}
+.currency-graph .currency-graph-data .graph-image {
+  flex: 1;
+  height: 280px;
+}
+.currency-graph .currency-graph-data div img {
+  width: 100%;
+  height: 100%;
+}
+.currency-graph .currency-graph-data .data {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.currency-graph .currency-graph-data .data div {
+  color: var(--gray-color-900);
+}
+.currency-graph .currency-graph-data-view {
+  margin-inline-start: 70px;
+  padding: 0 60px;
+}
+.currency-graph .currency-graph-data-view .data-view {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gray-color-900);
+}
+/* ------- currency-graph-sections-cards-end ------------  */
+
+/* ------- market-table-start ------------  */
+.graphs-section .currency-view .table {
+  background-color: var(--primary-color);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 10px;
+}
+.graphs-section .currency-view .table .header {
+  display: flex;
+  justify-content: space-between;
+}
+.graphs-section .currency-view .table .header h5 {
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+}
+.graphs-section .currency-view .table .header button {
+  border: 1px solid var(--gray-color-800);
+  background-color: transparent;
+  padding: 10px 18px;
+  border-radius: 5px;
+  color: var(--gray-color-900);
+}
+.graphs-section .currency-view .table .table-head {
+  display: flex;
+}
+.graphs-section .currency-view .table .table-head div {
+  color: var(--gray-color-900);
+  text-align: center;
+  flex: 1;
+}
+
+.graphs-section .currency-view .table .table-values {
+  display: flex;
+}
+.graphs-section .currency-view .table .table-values div {
+  color: var(--secondary-color);
+  flex: 1;
+  text-align: center;
+}
+.graphs-section .currency-view .table .table-values .coin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.graphs-section .currency-view .table .table-head div:nth-child(1),
+.graphs-section .currency-view .table .table-values div:nth-child(1) {
+  text-align: start;
+}
+/* ------- market-table-end ------------  */
+
+/* -------------- ELEMENTS-STYLE  --------------------------- */
